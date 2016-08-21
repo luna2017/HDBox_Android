@@ -15,6 +15,8 @@
 
 登录流程如下图所示
 
+![img_1](https://raw.githubusercontent.com/classTC/HDBox_Android/master/preview/img_1.png)
+
 
 
 获取到登录后返回的 token，以后对校园网的访问就可以使用 token 而避免使用密码，但是，token 是有有效期的，因此在客户端会有个过期检测，过期自动执行登录，因此在用户设备上始终是要缓存用户密码的，为了安全起见，可以对用户密码做一定的加密(当前版本还没有实现这个)
@@ -23,7 +25,7 @@
 
 获取用户课表数据，考试安排数据，成绩数据，以及用户个人信息数据的流程大致相同，如下图所示
 
-
+![img_2](https://raw.githubusercontent.com/classTC/HDBox_Android/master/preview/img_2.png)
 
 
 
@@ -33,3 +35,4 @@
 
 登录流程如下所示
 
+![img_3](https://raw.githubusercontent.com/classTC/HDBox_Android/master/preview/img_3.png)
