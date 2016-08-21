@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.ibookpa.hdbox.android"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 12
+        versionName "0.6.0 Preview 1"
+
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: 'dev']
+    }
+    signingConfigs {
+        release {
+            storeFile file("/Users/TC/Dev/Android/KeyStore/hdbox_red_mountain_apple.jks")
+            keyAlias "shupa"
+            keyPassword "shupa2017"
+            storePassword "shupa2017"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    if (output.outputFile != null && output.outputFile.name.endsWith('.apk')
+                            && 'release'.equals(variant.buildType.name)) {
+                        def apkFile = new File(
+                                output.outputFile.getParent(),
+                                "hdbox_${variant.flavorName}_${variant.versionName}_${buildTime()}.apk")
+                        output.outputFile = apkFile
+                    }
+                }
+            }
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'dev')
+        }
+
+        a360 {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'a360')
+        }
+
+        wandoujia {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'wandoujia')
+        }
+
+        huawei {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'huawei')
+        }
+
+        meizu {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'meizu')
+        }
+
+        tencent {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'tencent')
+        }
+        xiaomi {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'xiaomi')
+        }
+        baidu {
+            applicationId "com.ibookpa.hdbox.android"
+            manifestPlaceholders.put("UMENG_CHANNEL_VALUE", 'baidu')
+        }
+    }
+}
+
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyMMdd')
+    return formattedDate
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+
+    // 官方支持包
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+
+    // RxJava Android 支持
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+    // Retrofit 网络支持
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'// Gson 适配器
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'// RxJava 适配器
+
+    // Glide 图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    // 友盟统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+    // LeakCanary 内存泄漏监测
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
+    // 网页解析
+    compile 'org.jsoup:jsoup:1.9.2'
+}
+

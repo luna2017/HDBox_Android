@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_ic_course_name"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_course_name"/>
+
+    <TextView
+        android:id="@+id/tv_course_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginLeft="48dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/grey_800"
+        android:textSize="18sp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_ic_course_teacher"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@id/iv_ic_course_name"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_course_teacher"/>
+
+    <TextView
+        android:id="@+id/tv_course_item_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/tv_course_item_name"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/grey_800"
+        android:textSize="18sp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_ic_course_time"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@id/iv_ic_course_teacher"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_course_time"/>
+
+    <TextView
+        android:id="@+id/tv_course_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/tv_course_item_teacher"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/grey_800"
+        android:textSize="18sp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_ic_course_week"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@id/iv_ic_course_time"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_course_week"/>
+
+    <TextView
+        android:id="@+id/tv_course_item_week"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/tv_course_item_time"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/grey_800"
+        android:textSize="18sp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_ic_course_location"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@id/iv_ic_course_week"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_course_location"/>
+
+    <TextView
+        android:id="@+id/tv_course_item_location"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/tv_course_item_week"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/grey_800"
+        android:textSize="18sp"/>
+</RelativeLayout>

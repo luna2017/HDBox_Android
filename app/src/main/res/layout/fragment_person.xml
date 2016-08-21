@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey_100">
+
+    <RelativeLayout
+        android:id="@+id/rl_person_info"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:background="@color/white"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/tv_person_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/grey_900"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/iv_person_setting"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/select_grey_back"
+                android:contentDescription="@null"
+                android:padding="13dp"
+                android:src="@mipmap/ic_settings"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_person_avatar"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:background="@mipmap/avatar_default_black"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tv_person_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_person_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="点击登录"
+            android:textColor="@color/grey_900"
+            android:textSize="28sp"/>
+
+
+        <LinearLayout
+            android:id="@+id/ll_person_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_person_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_person_realName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_900"
+                android:textSize="28sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_person_uid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/grey_900"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_person_info">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_person_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个人信息"
+                        android:textColor="@color/grey_900"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:id="@+id/iv_person_refresh"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/select_white_back"
+                        android:src="@mipmap/ic_refresh_grey"/>
+
+                    <ImageView
+                        android:id="@+id/iv_person_college_logo"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="32dp"
+                        android:padding="4dp"
+                        android:src="@mipmap/ic_college"/>
+
+                    <TextView
+                        android:id="@+id/tv_person_college"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_toRightOf="@id/iv_person_college_logo"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/grey_900"
+                        android:textSize="16sp"/>
+
+
+                    <ImageView
+                        android:id="@+id/iv_person_grade_logo"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_below="@id/iv_person_college_logo"
+                        android:layout_marginTop="16dp"
+                        android:padding="4dp"
+                        android:src="@mipmap/ic_grade"/>
+
+                    <TextView
+                        android:id="@+id/tv_person_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_below="@id/tv_person_college"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/iv_person_grade_logo"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/grey_900"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_person_specialty_logo"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_below="@id/iv_person_grade_logo"
+                        android:layout_marginTop="16dp"
+                        android:padding="4dp"
+                        android:src="@mipmap/ic_specialty"/>
+
+                    <TextView
+                        android:id="@+id/tv_person_specialty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_below="@id/tv_person_grade"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/iv_person_grade_logo"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/grey_900"
+                        android:textSize="16sp"/>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_person_credit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_person_info"
+                android:layout_margin="8dp"
+                app:cardElevation="1dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="学业信息"
+                            android:textColor="@color/grey_900"
+                            android:textSize="12sp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/iv_credit_refresh"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="right"
+                            android:layout_weight="0"
+                            android:background="@drawable/select_white_back"
+                            android:src="@mipmap/ic_refresh_grey"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_show_credit_get"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="已修学分"/>
+
+                        <TextView
+                            android:id="@+id/tv_show_credit_lose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="挂科学分"/>
+
+                        <TextView
+                            android:id="@+id/tv_show_gpa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="学分绩点"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:id="@+id/tv_show_pass_credit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/grey_900"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_person_fail_credit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/grey_900"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_person_gpa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/grey_900"
+                            android:textSize="20sp"/>
+                    </TableRow>
+                </TableLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_slogan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_person_info"
+        android:gravity="center"
+        android:text="博学慎思,参天尽物"
+        android:textColor="@color/grey_300"
+        android:textSize="22sp"
+        android:visibility="gone"/>
+</RelativeLayout>

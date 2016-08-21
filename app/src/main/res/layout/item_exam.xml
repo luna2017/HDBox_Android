@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    app:cardElevation="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_exam_item_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="96dp"
+            android:layout_marginTop="16dp"
+            android:text="数据结构"
+            android:textColor="@color/grey_700"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_exam_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/green_500"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:text="已结束"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/ic_exam_item_date"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_below="@id/tv_exam_item_course_name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            android:src="@mipmap/ic_date"/>
+
+        <TextView
+            android:id="@+id/tv_exam_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/tv_exam_item_course_name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/ic_exam_item_date"
+            android:gravity="center_vertical"
+            android:text="2016-01-03"
+            android:textColor="@color/grey_500"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/ic_exam_item_time"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_below="@id/ic_exam_item_date"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:src="@mipmap/ic_time"/>
+
+        <TextView
+            android:id="@+id/tv_exam_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/tv_exam_item_date"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/ic_exam_item_time"
+            android:gravity="center_vertical"
+            android:text="08:10-10:10"
+            android:textColor="@color/grey_500"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/ic_exam_item_loc"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_below="@id/ic_exam_item_time"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:src="@mipmap/ic_loc"/>
+
+        <TextView
+            android:id="@+id/tv_exam_item_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/tv_exam_item_time"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/ic_exam_item_loc"
+            android:gravity="center_vertical"
+            android:text="3号楼-615"
+            android:textColor="@color/grey_500"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
